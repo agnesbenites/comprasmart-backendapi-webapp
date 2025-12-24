@@ -10,6 +10,10 @@ dotenv.config();
 // ========== UTILS E CLIENTS ==========
 const supabase = require('./utils/supabaseClient');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// Logo depois do dotenv.config()
+console.log('🔍 Debug Stripe:');
+console.log('STRIPE_SECRET_KEY:', process.env.STRIPE_SECRET_KEY ? '✅ Configurada' : '❌ NÃO ENCONTRADA');
+console.log('STRIPE_WEBHOOK_SECRET:', process.env.STRIPE_WEBHOOK_SECRET ? '✅ Configurada' : '❌ NÃO ENCONTRADA');
 
 // ========== IMPORTAR ROTAS ==========
 const userRoutes = require('./routes/userRoutes');
